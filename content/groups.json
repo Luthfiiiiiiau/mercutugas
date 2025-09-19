@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "subject": "Manajemen Strategis",
+    "lecturer": "Dr. Ahmad Susanto, M.M.",
+    "room": "A301",
+    "driveLink": "https://drive.google.com/drive/folders/example1",
+    "whatsappGroup": "https://chat.whatsapp.com/example1"
+  },
+  {
+    "id": 2,
+    "subject": "Manajemen Keuangan",
+    "lecturer": "Prof. Dr. Siti Nurhaliza, M.M.",
+    "room": "B205",
+    "driveLink": "https://drive.google.com/drive/folders/example2",
+    "whatsappGroup": "https://chat.whatsapp.com/example2"
+  }
+]

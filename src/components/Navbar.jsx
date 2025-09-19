@@ -53,6 +53,16 @@ const Navbar = () => {
                 </Link>
               );
             })}
+            <Button
+              onClick={() => {
+                if (window.netlifyIdentity) {
+                  window.netlifyIdentity.open();
+                }
+              }}
+              className="bg-green-600 hover:bg-green-700 text-white"
+            >
+              Login
+            </Button>
           </div>
 
           {/* Mobile menu button */}

@@ -10,44 +10,17 @@ const Home = () => {
   const [filteredTasks, setFilteredTasks] = useState([]);
 
   useEffect(() => {
-    const savedTasks = localStorage.getItem("managementTasks");
-    if (savedTasks) {
-      const parsedTasks = JSON.parse(savedTasks);
-      setTasks(parsedTasks);
-      setFilteredTasks(parsedTasks);
-    } else {
-      const sampleTasks = [
-        {
-          id: 1,
-          subject: "Manajemen Strategis",
-          room: "A301",
-          date: "2024-01-15",
-          deadline: "2024-01-22",
-          lecturer: "Dr. Ahmad Susanto, M.M.",
-          type: "Kelompok",
-          description: "Analisis SWOT perusahaan multinasional",
-          link: "https://classroom.google.com/example1",
-          classLeader: "Budi Santoso",
-          whatsapp: "081234567890",
-        },
-        {
-          id: 2,
-          subject: "Manajemen Keuangan",
-          room: "B205",
-          date: "2024-01-16",
-          deadline: "2024-01-25",
-          lecturer: "Prof. Dr. Siti Nurhaliza, M.M.",
-          type: "Individu",
-          description: "Laporan analisis rasio keuangan",
-          link: "",
-          classLeader: "Andi Wijaya",
-          whatsapp: "081234567891",
-        },
-      ];
-      setTasks(sampleTasks);
-      setFilteredTasks(sampleTasks);
-      localStorage.setItem("managementTasks", JSON.stringify(sampleTasks));
-    }
+    // Fetch tasks from CMS content files
+    fetch('/content/tasks.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setTasks(data);
+        setFilteredTasks(data);
+      })
+      .catch(() => {
+        setTasks([]);
+        setFilteredTasks([]);
+      });
   }, []);
 
   useEffect(() => {

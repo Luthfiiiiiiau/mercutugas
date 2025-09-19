@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Analisis SWOT Perusahaan Multinasional",
+    "subject": "Manajemen Strategis",
+    "room": "A301",
+    "date": "2024-01-15",
+    "deadline": "2024-01-22",
+    "lecturer": "Dr. Ahmad Susanto, M.M.",
+    "type": "Kelompok",
+    "description": "Analisis SWOT perusahaan multinasional",
+    "link": "https://classroom.google.com/example1",
+    "classLeader": "Budi Santoso",
+    "whatsapp": "081234567890"
+  },
+  {
+    "id": 2,
+    "title": "Laporan Analisis Rasio Keuangan",
+    "subject": "Manajemen Keuangan",
+    "room": "B205",
+    "date": "2024-01-16",
+    "deadline": "2024-01-25",
+    "lecturer": "Prof. Dr. Siti Nurhaliza, M.M.",
+    "type": "Individu",
+    "description": "Laporan analisis rasio keuangan",
+    "link": "",
+    "classLeader": "Andi Wijaya",
+    "whatsapp": "081234567891"
+  }
+]

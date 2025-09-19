@@ -16,33 +16,15 @@ const Groups = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Load groups from localStorage
-    const savedGroups = localStorage.getItem("managementGroups");
-    if (savedGroups) {
-      setGroups(JSON.parse(savedGroups));
-    } else {
-      // Sample data
-      const sampleGroups = [
-        {
-          id: 1,
-          subject: "Manajemen Strategis",
-          lecturer: "Dr. Ahmad Susanto, M.M.",
-          room: "A301",
-          groupLink: "https://chat.whatsapp.com/example1",
-          driveLink: "https://drive.google.com/drive/folders/example1",
-        },
-        {
-          id: 2,
-          subject: "Manajemen Keuangan",
-          lecturer: "Prof. Dr. Siti Nurhaliza, M.M.",
-          room: "B205",
-          groupLink: "https://chat.whatsapp.com/example2",
-          driveLink: "https://drive.google.com/drive/folders/example2",
-        },
-      ];
-      setGroups(sampleGroups);
-      localStorage.setItem("managementGroups", JSON.stringify(sampleGroups));
-    }
+    // Fetch groups from CMS content files
+    fetch('/content/groups.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setGroups(data);
+      })
+      .catch(() => {
+        setGroups([]);
+      });
   }, []);
 
   const handleLinkClick = (url, type) => {
@@ -123,7 +105,7 @@ const Groups = () => {
               {/* Action Buttons */}
               <div className="space-y-3">
                 <Button
-                  onClick={() => handleLinkClick(group.groupLink, "whatsapp")}
+                  onClick={() => handleLinkClick(group.whatsappGroup, "whatsapp")}
                   className="w-full bg-green-600 hover:bg-green-700 flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-4 h-4" />

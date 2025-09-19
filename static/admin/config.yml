@@ -11,6 +11,7 @@ collections:
     folder: "content/tasks"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "json"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Subject", name: "subject", widget: "string"}
@@ -29,6 +30,7 @@ collections:
     folder: "content/groups"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "json"
     fields:
       - {label: "Subject", name: "subject", widget: "string"}
       - {label: "Lecturer", name: "lecturer", widget: "string"}
