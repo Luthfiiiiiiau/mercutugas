@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  - name: "tasks"
+    label: "Tugas"
+    folder: "content/tasks"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subject", name: "subject", widget: "string"}
+      - {label: "Room", name: "room", widget: "string"}
+      - {label: "Date", name: "date", widget: "date"}
+      - {label: "Deadline", name: "deadline", widget: "date"}
+      - {label: "Lecturer", name: "lecturer", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["Individu", "Kelompok"]}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Class Leader", name: "classLeader", widget: "string"}
+      - {label: "WhatsApp", name: "whatsapp", widget: "string"}
+
+  - name: "groups"
+    label: "Kelompok"
+    folder: "content/groups"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Subject", name: "subject", widget: "string"}
+      - {label: "Lecturer", name: "lecturer", widget: "string"}
+      - {label: "Room", name: "room", widget: "string"}
+      - {label: "Drive Link", name: "driveLink", widget: "string"}
+      - {label: "WhatsApp Group", name: "whatsappGroup", widget: "string"}
